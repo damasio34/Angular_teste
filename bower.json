@@ -1,0 +1,10 @@
+{
+  "name": "Angular_teste",
+  "version": "1.0.0",
+  "description": "Projeto de teste com angularJs",
+  "main": "index.html",
+  "authors": [
+    "Darlan Damasio (damasio34)"
+  ],
+  "license": "MIT"
+}
