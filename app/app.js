@@ -1,9 +1,9 @@
 'use strict';
 
 //módulo root do app
-angular.module('App', []);
+angular.module('appTeste', []);
 
 // Bootstrap do app
 angular.element(document).ready(function() {
-  angular.bootstrap(document, ['myApp']);
+  angular.bootstrap(document, ['appTeste']);
 });

@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/damasio34/Angular_teste/issues"
   },
-  "homepage": "https://github.com/damasio34/Angular_teste"
+  "homepage": "https://github.com/damasio34/Angular_teste",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  }
 }
