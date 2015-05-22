@@ -5,5 +5,5 @@ angular.module('appTeste', []);
 
 // Bootstrap do app
 angular.element(document).ready(function() {
-  angular.bootstrap(document, ['appTeste']);
+	angular.bootstrap(document, ['appTeste']);
 });

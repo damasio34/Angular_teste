@@ -6,9 +6,21 @@ var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
+var wiredep = require('wiredep').stream;
+var browserSync = require('browser-sync').create();
 
 // Definimos o diretorio dos arquivos para evitar repetição futuramente
-var files = "./app/*.js";
+var files = "./src/*.js";
+
+// Inclusão dinâmica dos componentes instalados pelo bower na index.html
+gulp.task('components', function () {
+  gulp.src('./src/index.html')
+    .pipe(wiredep({
+      optional: 'configuration',
+      goes: 'here'
+    }))
+    .pipe(gulp.dest('./dist'));
+});
 
 //Aqui criamos uma nova tarefa através do ´gulp.task´ e damos a ela o nome 'lint'
 gulp.task('lint', function() {
@@ -37,7 +49,19 @@ gulp.task('default', function() {
 	// Usamos o `gulp.run` para rodar as tarefas
 	// E usamos o `gulp.watch` para o Gulp esperar mudanças nos arquivos para rodar novamente
 	gulp.run('lint', 'dist');
-	gulp.watch(files, function(evt) {
+	watch(files, function(evt) {
 		gulp.run('lint', 'dist');
+		browserSync.reload;
+		watch("./src/*.html").on("change", browserSync.reload);
 	});
+});
+
+// Tarefa que levanta um servidor para exbição do projeto
+gulp.task('serve', ['lint'], function() {
+    browserSync.init({
+        // proxy: "9003"
+        server: {
+            baseDir: "./src"
+        }
+    });
 });
