@@ -6,5 +6,8 @@
   "authors": [
     "Darlan Damasio (damasio34)"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.15"
+  }
 }
