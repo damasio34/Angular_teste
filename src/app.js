@@ -1,9 +1,13 @@
-'use strict';
+(function (angular) {
+	
+	'use strict';
 
-//módulo root do app
-angular.module('appTeste', []);
+	//módulo root do app
+	angular.module('appTeste', []);
 
-// Bootstrap do app
-angular.element(document).ready(function() {
-	angular.bootstrap(document, ['appTeste']);
-});
+	// Bootstrap do app
+	angular.element(document).ready(function() {
+		angular.bootstrap(document, ['appTeste']);
+	});
+
+})(angular);
